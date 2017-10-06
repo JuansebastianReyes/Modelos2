@@ -40,9 +40,12 @@ madre(X,Y):- mujer(X),progenitor(X,Y).
 adoptado(A) :- progenitor(X,A),hombre(X),hombre(Y),pareja(X,Y).
 abuelo(X,Y) :- progenitor(X,Z) , progenitor(Z,Y).
 bisabuelo(X,Y) :- progenitor(X,Z), abuelo(Z,Y).
+bisnieto(X,Y) :- progenitor(Y,Z),abuelo(Z,X).
 nieto(X,Y) :- progenitor(Y,Z),progenitor(Z,X).
-
-
+hermano(X,Y) :- progenitor(Z,X),progenitor(Z,Y),X \== Y.
+tio(X,Y) :- progenitor(Z,Y),hermano(Z,X).
+cuñado(X,Y) :- hermano(X,Z),pareja(Z,Y).
+sobrino(X,Y):-progenitor(Z,X),hermano(Z,Y).
 
 
 
