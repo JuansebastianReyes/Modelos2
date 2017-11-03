@@ -49,11 +49,12 @@ valorSemana(A,C):-profesorContrato(A,X),cargo(A,Y),costoHora(X,Y,D),horaSemana(X
 
 valorSemestre(A,B,C):- duracionSemestre(X,B),valorSemana(A,Y),profesorContrato(A,Z),porcentajeAdicional(Z,D), C is (X*Y)*(1+(D/100)).
 
+nomina(V,T):- findall(S,valorSemestre(_,T,S),S),nomina(S,0,V).
+
+
 
 sumaNomina([], S, S).
 sumaNomina([X|Xs], T, S):- T2 is T + X,sumaNomina(Xs, T2, S).
-
-nomina(V,T):- findall(S,valorSemestre(_,T,S),S),sumaNomina(S,0,V).
 
 
 
