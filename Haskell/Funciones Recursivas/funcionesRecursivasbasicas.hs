@@ -21,7 +21,7 @@ binario a = if (division a 2) == 0 then a
             else suma (modulo a 2) (multi 10 (binario (division a 2)))
 
 decimal :: Int->Int
-decimal a = if (division a 10) ==0 then a
+decimal a = if (division a 10) == 0 then a
             else suma (modulo a 10) (multi 2 (decimal (division a 10)))
             
 palindromo::Int->Bool

@@ -1,2 +1,4 @@
+﻿Funciones recursivas en Haskell
+
 DANIEL ARIZA RIAÑO      20152020921
 JUAN SEBASTIAN REYES    20142020091
